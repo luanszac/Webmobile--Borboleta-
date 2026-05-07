@@ -1,27 +1,19 @@
-// src/app/page.js
+// src/app/comparar/page.js
 
 "use client";
 
-import Link from "next/link";
+
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-export default function Home() {
-  const router = useRouter();
-
-  const [secao, setSecao] = useState("");
+export default function Comparar() {
   const [resultadoComparacao, setResultadoComparacao] = useState("");
-  const [resultadoGastos, setResultadoGastos] = useState("");
 
   const [cidade1, setCidade1] = useState("");
   const [cidade2, setCidade2] = useState("");
 
   const [nomeCidade1, setNomeCidade1] = useState("");
   const [nomeCidade2, setNomeCidade2] = useState("");
-
-  const [moradia, setMoradia] = useState("");
-  const [alimentacao, setAlimentacao] = useState("");
-  const [transporte, setTransporte] = useState("");
 
   const estados = [
     { nome: "Acre", valor: 3550 },
@@ -53,18 +45,6 @@ export default function Home() {
     { nome: "Tocantins", valor: 3810 },
   ];
 
-  function mostrarSecao(nome) {
-    setSecao(nome);
-  }
-
-  function irParaCalcular() {
-    router.push("/calcular");
-  }
-
-  function irParaComparar() {
-    router.push("/comparar");
-  }
-
   function compararCidades() {
     if (!cidade1 || !cidade2) {
       setResultadoComparacao("Selecione os dois estados.");
@@ -89,22 +69,13 @@ export default function Home() {
     }
   }
 
-  function calcularGastos() {
-    const total =
-      Number(moradia) +
-      Number(alimentacao) +
-      Number(transporte);
-
-    setResultadoGastos(`Total mensal: R$ ${total}`);
-  }
-
   return (
     <>
       <header>
         <img src="/logomarca.jpg" width="50px" />
 
         <nav id="main-nav">
-         <Link href="/">Inicio</Link>
+          <Link href="/">Inicio</Link>
           <Link href="/comparar">Comparações</Link>
           <Link href="/calcular">Calcular</Link>
           <Link href="/dicas">Dicas</Link>
@@ -114,11 +85,13 @@ export default function Home() {
           <button>Login</button>
           <button className="register">Registre-se</button>
         </section>
+
       </header>
 
       <section id="opcoes">
-        <h1 id="titulo">Descubra o custo de vida</h1>
-        <h2>Do seu estado</h2>
+        <h1 id="titulo">Comparar estados</h1>
+
+        <h2>Compare o custo de vida</h2>
 
         <img
           className="imagem"
@@ -127,22 +100,18 @@ export default function Home() {
       </section>
 
       <main>
-        <section>
-          <h2>Escolha seu estado</h2>
+        <section id="comparar" className="secao">
 
           <select
-            id="cidade"
             value={cidade1}
             onChange={(e) => {
               setCidade1(e.target.value);
               setNomeCidade1(
                 e.target.options[e.target.selectedIndex].text
               );
-
-              router.push("/comparar");
             }}
           >
-            <option value="">Selecione</option>
+            <option value="">Cidade 1</option>
 
             {estados.map((estado) => (
               <option key={estado.nome} value={estado.valor}>
@@ -151,51 +120,33 @@ export default function Home() {
             ))}
           </select>
 
-          <p id="resultado"></p>
+          <select
+            value={cidade2}
+            onChange={(e) => {
+              setCidade2(e.target.value);
+              setNomeCidade2(
+                e.target.options[e.target.selectedIndex].text
+              );
+            }}
+          >
+            <option value="">Cidade 2</option>
+
+            {estados.map((estado) => (
+              <option key={estado.nome} value={estado.valor}>
+                {estado.nome}
+              </option>
+            ))}
+          </select>
+
+          <br />
+          <br />
+
+          <button onClick={compararCidades}>
+            Comparar
+          </button>
+
+          <p>{resultadoComparacao}</p>
         </section>
-
-        <section>
-          <h2>O que você pode fazer aqui?</h2>
-
-          <ul>
-            <li>
-              <Link href="/comparar">
-                Comparar cidades
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/calcular">
-                Calcular gastos mensais
-              </Link>
-            </li>
-
-            <li>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  router.push("/dicas");
-                }}
-              >
-                Ver dicas de economia
-              </a>
-            </li>
-          </ul>
-        </section>
-
-        {secao === "dicas" && (
-          <section id="dicas" className="secao">
-            <h2>Dicas de economia</h2>
-
-            <ul>
-              <li>Evite compras por impulso</li>
-              <li>Use transporte público</li>
-              <li>Pesquise preços</li>
-              <li>Tenha reserva financeira</li>
-            </ul>
-          </section>
-        )}
       </main>
 
       <footer>
