@@ -115,7 +115,7 @@ Antes de começar, é necessário ter instalado:
 
 2. Se o projeto estiver no GitHub:
 
-• git clone [https://github.com/seu-usuario/Webmobile--Borboleta-.git](https://github.com/luanszac/Webmobile--Borboleta-)
+• git clone https://github.com/luanszac/Webmobile--Borboleta-
 
 Depois entre na pasta:
 
