@@ -33,7 +33,7 @@ export default function Dicas() {
     {
       nome: "lazer",
       titulo: "Lazer",
-      descricao: "Economize sem deixar de se divertir.",
+      descricao: "Economize sem deixar de aproveitar as coisas da vida.",
       imagem:
         "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
     },
