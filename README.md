@@ -10,7 +10,7 @@
 
 ---
 
-## 2 - Parte 1.
+## 2 - Estrutura inicial em Next.js e migração do HTML e CSS geral.
 
 Como evolução do projeto, foram implementadas rotas simples para simular navegação entre diferentes telas da aplicação, sem a necessidade de recarregar a página.
 
@@ -38,7 +38,7 @@ Essa rota permite carregar informações de acordo com a cidade selecionada pelo
 
 ---
 
-## 2 - 
+## 2 - Avanço do projeto.
 
 Como continuidade da evolução do projeto, realizamos a migração completa da estrutura original desenvolvida em HTML, CSS e JavaScript puro para o framework Next.js, modernizando a aplicação e preparando o sistema para futuras expansões.
 
@@ -75,5 +75,69 @@ A rota /dicas foi pensada como um espaço interativo para orientar o usuário co
 • Controle de gastos desnecessários
 • Comparação de preços e consumo consciente
 • Métodos de reserva de emergência
+
+---
+
+## 3 - Avanço do projeto.
+
+Como evolução recente do projeto, foram realizadas melhorias importantes na estrutura e na experiência do usuário, com foco em tornar a aplicação mais dinâmica, organizada e próxima de um sistema real de orientação financeira.
+A principal atualização foi a implementação de uma rota dinâmica na seção /dicas, permitindo que o conteúdo seja carregado de forma personalizada de acordo com a categoria selecionada pelo usuário. Agora, ao acessar caminhos como:
+
+
+• /dicas/alimentacao
+• /dicas/transporte
+• /dicas/moradia
+• /dicas/lazer
+
+O sistema exibe automaticamente dicas específicas relacionadas ao tema escolhido, com textos e imagens correspondentes. As dicas também foram reestruturadas para um formato mais completo, incluindo texto e imagem em cada card, deixando a interface mais visual e intuitiva.
+Além disso, a interface foi aprimorada com a organização em cards e melhor hierarquia visual, contribuindo para uma navegação mais clara e uma experiência mais agradável ao usuário.
+
+Durante o desenvolvimento do projeto, foi utilizado apoio de Inteligência Artificial (ChatGPT) como ferramenta auxiliar. A IA foi empregada principalmente para:
+
+• Correção de erros de código e estrutura (debug)
+• Sugestões de melhoria na organização da interface
+• Apoio na explicação e documentação do README
+• Orientação sobre boas práticas de desenvolvimento em Next.js
+
+---
+
+## Tutorial.
+
+1. Pré-requisitos
+
+Antes de começar, é necessário ter instalado:
+
+• Node.js (versão 16 ou superior)
+• npm ou yarn
+• Git (opcional, mas recomendado)
+
+---
+
+2. Se o projeto estiver no GitHub:
+
+• git clone https://github.com/luanszac/Webmobile--Borboleta-
+
+Depois entre na pasta:
+
+• cd Webmobile--Borboleta-
+
+---
+3. Instalando dependências
+
+Instale todas as dependências do projeto:
+
+• npm install
+
+---
+
+4. Rodando o projeto
+
+Para iniciar o servidor de desenvolvimento:
+
+• npm run dev
+
+Depois acesse no navegador:
+
+• http://localhost:3000
 
 ---
