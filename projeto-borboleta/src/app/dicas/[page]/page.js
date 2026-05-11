@@ -18,7 +18,7 @@ const dicasConteudo = {
       },
 
       {
-        texto: "Prefira alimentos da estação.",
+        texto: "Busque por atacados e promoções.",
         imagem:
           "https://images.unsplash.com/photo-1512621776951-a57141f2eefd",
       },
@@ -56,7 +56,7 @@ const dicasConteudo = {
       {
         texto: "Planeje rotas para economizar combustível.",
         imagem:
-          "https://images.unsplash.com/photo-1502920917128-1aa500764ce7",
+          "https://images.unsplash.com/photo-1628655207872-76a915ecc5e3",
       },
     ],
   },
@@ -74,7 +74,7 @@ const dicasConteudo = {
       {
         texto: "Reduza o tempo no banho.",
         imagem:
-          "https://images.unsplash.com/photo-1576678433413-202829a1ab98?w=800&auto=format&fit=cropgi",
+          "https://images.unsplash.com/photo-1576678433413-202829a1ab98?w=800&auto=format&fit=crop",
       },
 
       {

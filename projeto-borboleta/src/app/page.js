@@ -139,13 +139,12 @@ export default function Home() {
                 e.target.options[e.target.selectedIndex].text
               );
 
-              router.push("/comparar");
             }}
           >
-            <option value="">Selecione</option>
+            <option className="op" value="">Selecione</option>
 
             {estados.map((estado) => (
-              <option key={estado.nome} value={estado.valor}>
+              <option className="op" key={estado.nome} value={estado.valor}>
                 {estado.nome}
               </option>
             ))}

@@ -53,6 +53,10 @@ header h1, section h1 {
     text-align: center;
 }
 
+.op {
+    text-align: center;
+}
+
 header h2, section h2 {
     font-size: 18px;
     color: #777;
@@ -199,7 +203,7 @@ footer p {
     }
 
     #main-nav {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
         margin-top: 10px;
     }
