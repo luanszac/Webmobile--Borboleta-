@@ -14,6 +14,13 @@ export default function Comparar() {
 
   const [nomeCidade1, setNomeCidade1] = useState("");
   const [nomeCidade2, setNomeCidade2] = useState("");
+  const [estados, setEstados] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/estados")             
+      .then((res) => res.json())      
+      .then((data) => setEstados(data)); 
+  }, []);
 
   const estados = [
     { nome: "Acre", valor: 3550 },

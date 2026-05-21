@@ -5,6 +5,15 @@
 import Link from "next/link";
 
 export default function Dicas() {
+  const res = await fetch(`http://localhost:3000/api/dicas/${page}`);
+
+  // Se a API retornou erro
+  if (!res.ok) {
+    return <h1>Categoria não encontrada</h1>;
+  }
+
+  const conteudo = await res.json();
+
   const dicas = [
     {
       nome: "alimentacao",
