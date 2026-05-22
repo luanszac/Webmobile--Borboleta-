@@ -101,6 +101,27 @@ Durante o desenvolvimento do projeto, foi utilizado apoio de Inteligência Artif
 
 ---
 
+## 4 - Implementação da API
+
+Como evolução recente do projeto, foi implementada uma API própria para tornar a aplicação mais dinâmica e próxima de um sistema real de mercado.
+
+Com essa implementação, a aplicação passou a contar com uma separação mais clara entre frontend e backend, permitindo que os dados utilizados nas funcionalidades sejam fornecidos por requisições à API, em vez de depender exclusivamente de informações estáticas no código.
+
+A API foi desenvolvida para centralizar a lógica de fornecimento de dados da aplicação, permitindo:
+
+• Retorno de informações para comparação entre cidades  
+• Disponibilização de dados para cálculo de gastos mensais  
+• Fornecimento de dicas financeiras de forma dinâmica  
+• Melhor organização da estrutura do projeto  
+
+Benefícios obtidos com a implementação:
+
+• Separação entre interface e lógica de negócio  
+• Código mais organizado e escalável  
+• Facilidade de manutenção e futuras melhorias  
+• Estrutura mais próxima de aplicações reais utilizadas no mercado  
+• Preparação para futura integração com banco de dados externo  
+
 ## Tutorial.
 
 1. Pré-requisitos
@@ -141,3 +162,14 @@ Depois acesse no navegador:
 • http://localhost:3000
 
 ---
+
+5. Executando a API
+
+Para iniciar a API do projeto:
+
+• npm run server
+
+Após iniciar, a API ficará disponível localmente para atender as requisições da aplicação frontend. Exemplo: 
+
+• http://localhost:5000
+
