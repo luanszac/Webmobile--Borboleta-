@@ -4,10 +4,9 @@
 
 import Link from "next/link";
 
-export default function Dicas() {
-  const res = await fetch(`http://localhost:3000/api/dicas/${page}`);
-
-  // Se a API retornou erro
+export default async function Dicas() {
+  const res = await fetch("http://localhost:3000/api/dicas/alimentacao");
+  
   if (!res.ok) {
     return <h1>Categoria não encontrada</h1>;
   }

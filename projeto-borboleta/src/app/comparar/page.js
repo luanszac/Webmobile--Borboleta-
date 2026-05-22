@@ -2,55 +2,39 @@
 
 "use client";
 
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Comparar() {
-  const [resultadoComparacao, setResultadoComparacao] = useState("");
+  const [resultadoComparacao, setResultadoComparacao] =
+    useState("");
 
   const [cidade1, setCidade1] = useState("");
   const [cidade2, setCidade2] = useState("");
 
-  const [nomeCidade1, setNomeCidade1] = useState("");
-  const [nomeCidade2, setNomeCidade2] = useState("");
+  const [nomeCidade1, setNomeCidade1] =
+    useState("");
+
+  const [nomeCidade2, setNomeCidade2] =
+    useState("");
+
   const [estados, setEstados] = useState([]);
 
   useEffect(() => {
-    fetch("/api/estados")             
-      .then((res) => res.json())      
-      .then((data) => setEstados(data)); 
-  }, []);
+    async function carregarEstados() {
+      try {
+        const res = await fetch("/api/estados");
 
-  const estados = [
-    { nome: "Acre", valor: 3550 },
-    { nome: "Alagoas", valor: 2450 },
-    { nome: "Amapá", valor: 2830 },
-    { nome: "Amazonas", valor: 2990 },
-    { nome: "Bahia", valor: 3210 },
-    { nome: "Ceará", valor: 2540 },
-    { nome: "Distrito Federal", valor: 4920 },
-    { nome: "Espírito Santo", valor: 3400 },
-    { nome: "Goiás", valor: 3300 },
-    { nome: "Maranhão", valor: 2230 },
-    { nome: "Mato Grosso", valor: 3360 },
-    { nome: "Mato Grosso do Sul", valor: 3330 },
-    { nome: "Minas Gerais", valor: 3360 },
-    { nome: "Pará", valor: 3050 },
-    { nome: "Paraíba", valor: 2820 },
-    { nome: "Paraná", valor: 4300 },
-    { nome: "Pernambuco", valor: 2840 },
-    { nome: "Piauí", valor: 2690 },
-    { nome: "Rio de Janeiro", valor: 3340 },
-    { nome: "Rio Grande do Norte", valor: 2550 },
-    { nome: "Rio Grande do Sul", valor: 3360 },
-    { nome: "Rondônia", valor: 3100 },
-    { nome: "Roraima", valor: 3710 },
-    { nome: "Santa Catarina", valor: 4180 },
-    { nome: "São Paulo", valor: 4270 },
-    { nome: "Sergipe", valor: 2010 },
-    { nome: "Tocantins", valor: 3810 },
-  ];
+        const data = await res.json();
+
+        setEstados(data);
+      } catch (erro) {
+        console.log("Erro ao buscar estados");
+      }
+    }
+
+    carregarEstados();
+  }, []);
 
   function compararCidades() {
     if (!cidade1 || !cidade2) {
