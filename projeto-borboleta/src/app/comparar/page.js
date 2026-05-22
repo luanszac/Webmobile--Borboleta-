@@ -2,38 +2,24 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Comparar() {
-  const [resultadoComparacao, setResultadoComparacao] =
-    useState("");
+  const [resultadoComparacao, setResultadoComparacao] = useState("");
 
   const [cidade1, setCidade1] = useState("");
   const [cidade2, setCidade2] = useState("");
 
-  const [nomeCidade1, setNomeCidade1] =
-    useState("");
-
-  const [nomeCidade2, setNomeCidade2] =
-    useState("");
+  const [nomeCidade1, setNomeCidade1] = useState("");
+  const [nomeCidade2, setNomeCidade2] = useState("");
 
   const [estados, setEstados] = useState([]);
 
   useEffect(() => {
-    async function carregarEstados() {
-      try {
-        const res = await fetch("/api/estados");
-
-        const data = await res.json();
-
-        setEstados(data);
-      } catch (erro) {
-        console.log("Erro ao buscar estados");
-      }
-    }
-
-    carregarEstados();
+    fetch("/api/estados")
+      .then((res) => res.json())
+      .then((data) => setEstados(data));
   }, []);
 
   function compararCidades() {
@@ -76,12 +62,10 @@ export default function Comparar() {
           <button>Login</button>
           <button className="register">Registre-se</button>
         </section>
-
       </header>
 
       <section id="opcoes">
         <h1 id="titulo">Comparar estados</h1>
-
         <h2>Compare o custo de vida</h2>
 
         <img

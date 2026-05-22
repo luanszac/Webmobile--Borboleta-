@@ -4,15 +4,7 @@
 
 import Link from "next/link";
 
-export default async function Dicas() {
-  const res = await fetch("http://localhost:3000/api/dicas/alimentacao");
-  
-  if (!res.ok) {
-    return <h1>Categoria não encontrada</h1>;
-  }
-
-  const conteudo = await res.json();
-
+export default function Dicas() {
   const dicas = [
     {
       nome: "alimentacao",
@@ -21,7 +13,6 @@ export default async function Dicas() {
       imagem:
         "https://images.unsplash.com/photo-1546069901-ba9599a7e63c",
     },
-
     {
       nome: "transporte",
       titulo: "Transporte",
@@ -29,7 +20,6 @@ export default async function Dicas() {
       imagem:
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
     },
-
     {
       nome: "moradia",
       titulo: "Moradia",
@@ -37,7 +27,6 @@ export default async function Dicas() {
       imagem:
         "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
     },
-
     {
       nome: "lazer",
       titulo: "Lazer",
@@ -63,7 +52,6 @@ export default async function Dicas() {
           <button>Login</button>
           <button className="register">Registre-se</button>
         </section>
-
       </header>
 
       <section id="opcoes">
@@ -72,9 +60,9 @@ export default async function Dicas() {
       </section>
 
       <img
-          className="imagem"
-          src="https://habitability.com.br/wp-content/uploads/2022/04/Cidadade-compacta.png"
-        />
+        className="imagem"
+        src="https://habitability.com.br/wp-content/uploads/2022/04/Cidadade-compacta.png"
+      />
 
       <main>
         <section
@@ -114,6 +102,7 @@ export default async function Dicas() {
           ))}
         </section>
       </main>
+
       <footer>
         <p>Entre em contato</p>
         <p>Nossas redes</p>
